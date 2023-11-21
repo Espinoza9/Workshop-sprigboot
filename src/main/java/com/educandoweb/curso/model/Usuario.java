@@ -1,8 +1,10 @@
-package com.educandoweb.curso;
+package com.educandoweb.curso.model;
 
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 @Entity
 @Table(name = "tb_usuario")
@@ -14,7 +16,12 @@ public class Usuario implements Serializable {
     private  String email;
     private String telefone;
     private String senha;
+    @OneToMany(mappedBy = "cliente")
+    private List<Pedido> pedidos = new ArrayList<>();
 
+ public Usuario(){
+
+ }
     public Usuario(Long id, String nome, String email, String telefone, String senha) {
         this.id = id;
         this.nome = nome;
@@ -54,7 +61,9 @@ public class Usuario implements Serializable {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

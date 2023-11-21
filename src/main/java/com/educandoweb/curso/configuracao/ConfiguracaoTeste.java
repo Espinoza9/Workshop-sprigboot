@@ -1,7 +1,7 @@
 package com.educandoweb.curso.configuracao;
 
 
-import com.educandoweb.curso.Usuario;
+import com.educandoweb.curso.model.Usuario;
 import com.educandoweb.curso.repositories.UsarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
