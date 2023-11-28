@@ -1,5 +1,6 @@
-package com.educandoweb.curso.model;
+package com.educandoweb.curso.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -9,6 +10,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "tb_usuario")
 public class Usuario implements Serializable {
+    private  static  final long serialVersionUID =1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -16,6 +18,7 @@ public class Usuario implements Serializable {
     private  String email;
     private String telefone;
     private String senha;
+    @JsonIgnore
     @OneToMany(mappedBy = "cliente")
     private List<Pedido> pedidos = new ArrayList<>();
 

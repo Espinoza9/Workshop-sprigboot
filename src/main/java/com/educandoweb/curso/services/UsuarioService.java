@@ -1,6 +1,6 @@
 package com.educandoweb.curso.services;
 
-import com.educandoweb.curso.model.Usuario;
+import com.educandoweb.curso.models.Usuario;
 import com.educandoweb.curso.repositories.UsarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

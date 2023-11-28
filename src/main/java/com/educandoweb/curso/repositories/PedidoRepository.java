@@ -1,9 +1,9 @@
 package com.educandoweb.curso.repositories;
 
-import com.educandoweb.curso.models.Usuario;
+import com.educandoweb.curso.models.Pedido;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UsarioRepository extends JpaRepository<Usuario , Long> {
+public interface PedidoRepository extends JpaRepository<Pedido , Long> {
 }
