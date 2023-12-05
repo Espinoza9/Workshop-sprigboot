@@ -1,9 +1,13 @@
 package com.educandoweb.curso.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
+
 @Entity
 @Table(name = "tb_categoria")
 public class Categoria implements Serializable {
@@ -12,6 +16,10 @@ public class Categoria implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+    @JsonIgnore
+    @ManyToMany(mappedBy = "categorias")
+    private Set<Produto> produtos= new HashSet<>();
+
     public Categoria(){
 
     }
@@ -35,6 +43,10 @@ public class Categoria implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public Set<Produto> getProdutos() {
+        return produtos;
     }
 
     @Override
